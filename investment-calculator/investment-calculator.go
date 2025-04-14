@@ -32,8 +32,9 @@ func main(){
 	fmt.Scan(&expectedReturnRate)
 	printText("Years: ")
 	fmt.Scan(&years)
-	 futureValue := investmentAmount * math.Pow( (1+expectedReturnRate/100),years);
-	 futureRealValue:= futureValue / math.Pow(1+inflationRate/100, years)
+	futureValue, futureRealValue := calculateFutureValues(investmentAmount, expectedReturnRate,years)
+	//  futureValue := investmentAmount * math.Pow( (1+expectedReturnRate/100),years);
+	//  futureRealValue:= futureValue / math.Pow(1+inflationRate/100, years)
 	fmt.Println(futureValue)
 	fmt.Println((futureRealValue))
 }
@@ -42,7 +43,7 @@ func printText(text string){
 	fmt.Printf(text);
 }
 
-func futureValues(investmentAmount, expectedReturnRate,years float64) (float64, float64){
+func calculateFutureValues(investmentAmount, expectedReturnRate,years float64) (float64, float64){
 	fv:= investmentAmount * math.Pow( (1+expectedReturnRate/100),years);
 	frv:= fv / math.Pow(1+inflationRate/100, years)
 	return fv, frv ;
