@@ -1,0 +1,7 @@
+{
+  "prettier.singleQuote": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "diffEditor.codeLens": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
